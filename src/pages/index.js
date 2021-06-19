@@ -9,6 +9,7 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <h1>Hi people</h1>
+    <p>Hoting環境をFirebaseに変更しました。</p>
     <p>カスタマイズしたから、再アップロードしました。</p>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
