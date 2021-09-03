@@ -8,9 +8,25 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
+
+// console.log(window);
+
+const isBrowser = typeof window !== `undefined`
+const testLocalStrage = ()=>{
+    if (isBrowser) {
+        const storage = window['localStorage'];
+        console.log(storage);
+        localStorage.setItem('myCat', 'Tom');
+    }
+}
+
+const viewLocalStrage=()=>{
+    if (isBrowser) {
+        console.log("localStrage myCat is ",localStorage.getItem('myCat'));
+    }
+};
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,6 +38,9 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  testLocalStrage();
+  viewLocalStrage();
 
   return (
     <>
